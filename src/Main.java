@@ -1,8 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -50,6 +46,11 @@ public class Main {
 
         String string = " ((1234) 23 []567788{uu(uu)}oo(888))";
         System.out.println(checkStr(string));
+        Map <String,String> map = new HashMap<>();
+        map.put("ключ1", "значение1");
+        map.put("ключ2", "значение2");
+        map.put("ключ3", "значение3");
+        System.out.println(map.get("ключ1"));
 
 
 
