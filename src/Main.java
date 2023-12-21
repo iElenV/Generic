@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.List;
 import java.util.Stack;
 
@@ -62,15 +64,29 @@ public class Main {
         byte element4 = ")".getBytes()[0];
         byte element5 = "]".getBytes()[0];
         byte element6 = "}".getBytes()[0];
+        Set <Byte> openBrackets = new HashSet<>();
+        openBrackets.add("(".getBytes()[0]);
+        openBrackets.add("[".getBytes()[0]);
+        openBrackets.add("{".getBytes()[0]);
+//        Set <Byte> closeBrackets = new HashSet<>();
+//        openBrackets.add(")".getBytes()[0]);
+//        openBrackets.add("]".getBytes()[0]);
+//        openBrackets.add("}".getBytes()[0]);
+
+
+
 
         for (byte letter: string.getBytes()) {
-            if (letter== element1) {
-                stack.add(letter);
-            } else if (letter== element2) {
-                stack.add(letter);
-            } else if (letter== element3) {
-                stack.add(letter);
-            } else  if (letter== element4){
+            if (openBrackets.contains(letter)) {
+                stack.add (letter);
+            }
+//            if (letter== element1) {
+//                stack.add(letter);
+//            } else if (letter== element2) {
+//                stack.add(letter);
+//            } else if (letter== element3) {
+//                stack.add(letter);
+            else  if (letter== element4){
                 byte peek =  stack.peek();
                 if (peek ==element1) {
                     stack.pop();
